@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <app-navbar></app-navbar>
 <!-- Page Header -->
-<app-header></app-header>
+<app-header [cover]="sharingService.cover" [heading]="sharingService.heading" [subheading]="sharingService.subheading"></app-header>
 <!-- Main Content -->
 <router-outlet></router-outlet>
 

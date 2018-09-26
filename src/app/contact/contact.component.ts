@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharingService} from '../_services/sharing.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharingService: SharingService) {
+    this.sharingService.cover = 'assets/img/contact-bg.jpg';
+    this.sharingService.heading = 'Contact';
+    this.sharingService.subheading = 'another subheading';
+  }
 
   ngOnInit() {
+
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharingService} from '../_services/sharing.service';
 
 @Component({
   selector: 'app-post',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharingService: SharingService) {
+    this.sharingService.cover = 'assets/img/post-bg.jpg';
+    this.sharingService.heading = 'My Post';
+    this.sharingService.subheading = 'another subheading';
+  }
 
   ngOnInit() {
   }
+
+
 
 }

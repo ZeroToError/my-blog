@@ -32,7 +32,8 @@
             "scripts": [
               "src/assets/vendor/jquery/jquery.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/js/clean-blog.min.js"
+              "src/assets/js/clean-blog.min.js",
+              "node_modules/marked/lib/marked.js"
             ]
           },
           "configurations": {
