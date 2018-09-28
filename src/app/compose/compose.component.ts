@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HeadingInfo} from '../_models/heading-info';
+import {SharingService} from '../_services/sharing.service';
 
 @Component({
   selector: 'app-compose',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComposeComponent implements OnInit {
   data: string;
-  constructor() { }
+  constructor(private sharingService: SharingService) {
+    this.initData();
+  }
 
   ngOnInit() {
+  }
+
+  public initData(): void {
+    const headingData = new HeadingInfo();
+    headingData.cover = 'assets/img/about-bg.jpg';
+    headingData.heading = 'Composer';
+    headingData.subheading = 'Write your own story';
+    this.sharingService.setNewHeadingInfo(headingData);
   }
 
 }

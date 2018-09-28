@@ -1,0 +1,73 @@
+.composer-container {
+  margin: 0 20px 0 20px;
+}
+
+.header-info {
+  margin: 0;
+  padding: 0.8rem 0 0.65rem 0;
+}
+
+.header-info input {
+  border: none !important;
+  outline: none !important;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.tag-info {
+  margin: 0;
+  padding: 0 0.65rem 0.5rem 0;
+}
+
+.tag-info input {
+  border: none !important;
+  outline: none !important;
+  font-size: 0.875em;
+  font-weight: lighter;
+  width: 100%;
+}
+
+.composer-data {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.composer-editor {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  max-width: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-right: none;
+  display: inline-block;
+}
+.composer-preview {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  max-width: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+.markdown {
+  height: 1000px;
+  padding: 20px;
+}
+.composer-textarea {
+  height: 1000px;
+}
+textarea {
+  height:100%;
+  width:100%;
+  border: none;
+  margin: 0;
+  padding: 20px;
+  resize: none;
+}
+p {
+  margin: 0 !important;
+}

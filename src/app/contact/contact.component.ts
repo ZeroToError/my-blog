@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SharingService} from '../_services/sharing.service';
+import {HeadingInfo} from '../_models/heading-info';
 
 @Component({
   selector: 'app-contact',
@@ -9,13 +10,18 @@ import {SharingService} from '../_services/sharing.service';
 export class ContactComponent implements OnInit {
 
   constructor(private sharingService: SharingService) {
-    this.sharingService.cover = 'assets/img/contact-bg.jpg';
-    this.sharingService.heading = 'Contact';
-    this.sharingService.subheading = 'another subheading';
+    this.initData();
   }
 
   ngOnInit() {
+  }
 
+  public initData(): void {
+    const headingData = new HeadingInfo();
+    headingData.cover = 'assets/img/contact-bg.jpg';
+    headingData.heading = 'Contact Us';
+    headingData.subheading = 'Always listening, Always understanding';
+    this.sharingService.setNewHeadingInfo(headingData);
   }
 
 }

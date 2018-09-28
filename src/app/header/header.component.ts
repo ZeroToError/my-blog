@@ -1,21 +1,27 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {SharingService} from '../_services/sharing.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  @Input() cover: string;
-  @Input() heading: string;
-  @Input() subheading: string;
-  constructor(
-    private sanitizer: DomSanitizer,
-  ) { }
+  public cover: string;
+  public heading: string;
+  public subheading: string;
 
-  ngOnInit() {
+  public constructor(private sanitizer: DomSanitizer,
+                     private sharingService: SharingService,
+                     private route: Router) {
+    this.sharingService.getHeadingInfo().subscribe(data => {
+      this.cover = data.cover;
+      this.heading = data.heading;
+      this.subheading = data.subheading;
+    });
   }
 
   safeUrl() {
