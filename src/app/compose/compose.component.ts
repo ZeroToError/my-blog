@@ -11,8 +11,10 @@ export class ComposeComponent implements OnInit {
   data: string;
   constructor(private sharingService: SharingService) {
     this.initData();
+    this.type = 1;
   }
 
+  type: number;
   ngOnInit() {
   }
 
@@ -24,4 +26,7 @@ export class ComposeComponent implements OnInit {
     this.sharingService.setNewHeadingInfo(headingData);
   }
 
+  setType(type: number) {
+    this.type = type;
+  }
 }

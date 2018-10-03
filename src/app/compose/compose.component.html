@@ -1,5 +1,8 @@
 <!-- static markdown -->
 <div class="composer-container">
+  <button (click)="setType(1)">Both</button>
+  <button (click)="setType(2)">Composer</button>
+  <button (click)="setType(3)">Preview</button>
   <div class="header-info">
     <input type="text" id="blog-title" placeholder="Tựa đề hay gây chú ý cho người đọc">
   </div>
@@ -7,13 +10,13 @@
     <input type="text" id="blog tag" placeholder="Tag hay giúp bài viết dễ được tìm hơn">
   </div>
   <div class="composer-data">
-    <div class="composer-editor">
+    <div class="composer-editor" [class.display-full]="type===2" [class.display-zero]="type===3">
       <div class="composer-textarea">
         <textarea [(ngModel)]="data" id="composer" name="composer" placeholder="Write your post"></textarea>
       </div>
     </div>
 
-    <div class="composer-preview">
+    <div class="composer-preview" [class.display-full]="type===3" [class.display-zero]="type===2">
       <div markdown [data]="data" class="markdown">
       </div>
     </div>
