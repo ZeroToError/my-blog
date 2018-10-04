@@ -22,16 +22,16 @@ export class PostComponent implements OnInit {
   post: Post;
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.getPost(id);
+    const title = this.route.snapshot.paramMap.get('title');
+    this.getPost(title);
   }
 
   public initData(): void {
 
   }
 
-  getPost(id: number) {
-    this.postService.getPostById(id).subscribe(data => {
+  getPost(title: string) {
+    this.postService.getPostByTitle(title).subscribe(data => {
       this.post = data;
       this.setHeading('assets/img/post-bg.jpg', this.post.title, this.post.description);
     });

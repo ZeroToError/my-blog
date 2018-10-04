@@ -37,4 +37,8 @@ export class PostService {
     return this.httpService.get(url);
   }
 
+  getPostByTitle(title: string): Observable<any> {
+    const url = POST_PATH + '/get-by-title/' + title;
+    return this.httpService.get(url);
+  }
 }
