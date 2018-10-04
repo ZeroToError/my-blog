@@ -2,3 +2,18 @@
 *:focus {
   border: none;
 }
+
+.markdown p {
+  text-align: justify !important;
+  text-indent: 25px;
+}
+
+.markdown a {
+  color: #17a2b8;
+  text-decoration: none !important;
+}
+
+.markdown h1 {
+  color: #17a2b8;
+  text-decoration: none;
+}
