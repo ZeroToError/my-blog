@@ -15,6 +15,7 @@
   width: 100%;
 }
 
+
 .tag-info {
   margin: 0;
   padding: 0 0.65rem 0.5rem 0;
@@ -41,9 +42,21 @@
   width: 50%;
   max-width: 50%;
   border: 1px solid rgba(0,0,0,0.15);
-  border-right: none;
+  /*border-right: none;*/
   display: inline-block;
 }
+
+.display-full {
+  width: 100% ;
+  max-width: 100%;
+}
+
+.display-zero  {
+  width: 0;
+  max-width: 0;
+  border: none;
+}
+
 .composer-preview {
   margin: 0;
   padding: 0;
@@ -69,7 +82,7 @@ textarea {
   resize: none;
   outline: none;
 }
-p {
+p{
   margin: 0 !important;
 }
 

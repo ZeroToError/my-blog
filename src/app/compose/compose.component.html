@@ -19,7 +19,6 @@
         <textarea [(ngModel)]="data" id="composer" name="composer" placeholder="Write your post"></textarea>
       </div>
     </div>
-
     <div class="composer-preview" [class.display-full]="composeType==='preview'" [class.display-zero]="composeType==='composer'">
       <div markdown [data]="data" class="markdown">
       </div>

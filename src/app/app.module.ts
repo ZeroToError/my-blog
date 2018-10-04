@@ -13,6 +13,7 @@ import {PostComponent} from './post/post.component';
 import {MarkdownModule} from 'ngx-markdown';
 import { ComposeComponent } from './compose/compose.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MarkdownModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

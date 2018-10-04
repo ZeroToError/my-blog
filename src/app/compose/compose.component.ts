@@ -30,5 +30,4 @@ export class ComposeComponent implements OnInit {
   setComposeType(composeType: string) {
     this.composeType = composeType;
   }
-
 }
