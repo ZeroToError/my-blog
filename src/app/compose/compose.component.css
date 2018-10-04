@@ -67,7 +67,18 @@ textarea {
   margin: 0;
   padding: 20px;
   resize: none;
+  outline: none;
 }
 p {
   margin: 0 !important;
+}
+
+.display-full {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-right: 1px solid rgba(0,0,0,0.15);
+}
+
+.display-zero {
+  display: none !important;
 }

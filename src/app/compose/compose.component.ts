@@ -9,8 +9,11 @@ import {SharingService} from '../_services/sharing.service';
 })
 export class ComposeComponent implements OnInit {
   data: string;
+  composeType: string;
+
   constructor(private sharingService: SharingService) {
     this.initData();
+    this.composeType = 'both';
   }
 
   ngOnInit() {
@@ -22,6 +25,10 @@ export class ComposeComponent implements OnInit {
     headingData.heading = 'Composer';
     headingData.subheading = 'Write your own story';
     this.sharingService.setNewHeadingInfo(headingData);
+  }
+
+  setComposeType(composeType: string) {
+    this.composeType = composeType;
   }
 
 }
