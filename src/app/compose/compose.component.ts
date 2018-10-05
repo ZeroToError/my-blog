@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HeadingInfo} from '../_models/heading-info';
 import {SharingService} from '../_services/sharing.service';
+import {Post} from '../_models/post';
+import {PostService} from '../_services/post.service';
 
 @Component({
   selector: 'app-compose',
@@ -8,12 +10,14 @@ import {SharingService} from '../_services/sharing.service';
   styleUrls: ['./compose.component.css']
 })
 export class ComposeComponent implements OnInit {
-  data: string;
   composeType: string;
 
-  constructor(private sharingService: SharingService) {
+  newPost: Post
+  constructor(private sharingService: SharingService,
+              private postService: PostService) {
     this.initData();
     this.composeType = 'both';
+    this.newPost = new Post();
   }
 
   ngOnInit() {
@@ -29,5 +33,13 @@ export class ComposeComponent implements OnInit {
 
   setComposeType(composeType: string) {
     this.composeType = composeType;
+  }
+
+  submitNewPost() {
+    this.postService.publishPost(this.newPost).subscribe(result => {
+      alert('Success');
+    }, error => {
+      alert(error.toString());
+    });
   }
 }

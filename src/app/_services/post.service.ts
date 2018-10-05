@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs/index';
+import {BehaviorSubject, Observable, of} from 'rxjs/index';
 import {POST_PATH} from '../_constants/resource_path';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Post} from '../_models/post';
+import {catchError, tap} from 'rxjs/internal/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -41,4 +47,26 @@ export class PostService {
     const url = POST_PATH + '/get-by-title/' + title;
     return this.httpService.get(url);
   }
+
+  publishPost(newPost: Post): Observable<Post> {
+    return this.httpService.post<Post>(POST_PATH, newPost, httpOptions).pipe(
+      tap((post: Post) => console.log(`added new post w/ id=${post.id}`)),
+      catchError(this.handleError<Post>('addHero'))
+    );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      console.log(`${operation} failed: ${error.message}`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
 }

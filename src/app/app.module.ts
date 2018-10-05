@@ -10,10 +10,10 @@ import {ContactComponent} from './contact/contact.component';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {PostComponent} from './post/post.component';
-import {MarkdownModule} from 'ngx-markdown';
+import {MarkdownModule, MarkedOptions} from 'ngx-markdown';
 import { ComposeComponent } from './compose/compose.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,21 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MarkdownModule.forRoot(),
+    MarkdownModule.forRoot({
+      loader: HttpClient, // optional, only if you use [src] attribute
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          gfm: true,
+          tables: true,
+          breaks: false,
+          pedantic: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+        },
+      },
+    }),
     FormsModule,
     HttpClientModule
   ],

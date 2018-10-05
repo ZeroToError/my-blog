@@ -3,7 +3,7 @@ export class Post {
   public createdAt: Date;
   public updatedAt: Date;
   public title: string;
-  public titleUrl: string;
+  public titleUrl: string = '';
   public description: string;
   public content: string;
 }

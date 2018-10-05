@@ -27,13 +27,18 @@
               "src/styles.css",
               "src/assets/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/vendor/fontawesome-free/css/all.min.css",
-              "src/assets/css/clean-blog.min.css"
+              "src/assets/css/clean-blog.min.css",
+              "node_modules/prismjs/themes/prism.css"
             ],
             "scripts": [
               "src/assets/vendor/jquery/jquery.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
               "src/assets/js/clean-blog.min.js",
-              "node_modules/marked/lib/marked.js"
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.js",
+              "node_modules/prismjs/components/prism-css.js",
+              "node_modules/prismjs/components/prism-java.js"
             ]
           },
           "configurations": {
