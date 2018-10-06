@@ -14,10 +14,12 @@ export class HomeComponent implements OnInit {
 
   postList: Post[];
   currentPage: number;
+
   constructor(private sharingService: SharingService,
               private postService: PostService) {
     this.initData();
     this.currentPage = 0;
+
   }
 
   ngOnInit() {
@@ -27,7 +29,11 @@ export class HomeComponent implements OnInit {
 
   getPostList() {
     this.postService.getPostsPaging(this.currentPage).subscribe(data => {
-      this.postList = data['content'];
+      if (data['content'].length) {
+        this.postList = data['content'];
+      } else {
+        alert('No more posts available!');
+      }
     });
   }
 

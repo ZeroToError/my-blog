@@ -1,1 +1,1 @@
-export const POST_PATH = 'http://localhost:8080/posts';
+export const POST_PATH = 'https://nvhung-blog.herokuapp.com/posts';
