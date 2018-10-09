@@ -6,4 +6,5 @@ export class Post {
   public titleUrl: string = '';
   public description: string;
   public content: string;
+  public author: string;
 }

@@ -19,8 +19,8 @@ export class AboutComponent implements OnInit {
   public initData(): void {
     const headingData = new HeadingInfo();
     headingData.cover = 'assets/img/about-bg.jpg';
-    headingData.heading = 'About Us';
-    headingData.subheading = 'We do what we say';
+    headingData.heading = 'Chẳng là ai cả...';
+    headingData.subheading = 'Tôi không cảm thấy cần biết chính xác tôi là ai. Điều thú vị chính trong cuộc sống và trong công việc là trở thành con người khác so với lúc ta khởi đầu';
     this.sharingService.setNewHeadingInfo(headingData);
   }
 }

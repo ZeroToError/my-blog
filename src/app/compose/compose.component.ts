@@ -26,8 +26,8 @@ export class ComposeComponent implements OnInit {
   public initData(): void {
     const headingData = new HeadingInfo();
     headingData.cover = 'assets/img/about-bg.jpg';
-    headingData.heading = 'Composer';
-    headingData.subheading = 'Write your own story';
+    headingData.heading = 'Hãy tạo ra những tác phẩm để đời nào!';
+    headingData.subheading = 'Đừng sai chính tả nhé :v';
     this.sharingService.setNewHeadingInfo(headingData);
   }
 
@@ -37,7 +37,7 @@ export class ComposeComponent implements OnInit {
 
   submitNewPost() {
     this.postService.publishPost(this.newPost).subscribe(result => {
-      alert('Success');
+      window.location.reload();
     }, error => {
       alert(error.toString());
     });

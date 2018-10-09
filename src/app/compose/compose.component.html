@@ -4,16 +4,37 @@
     <input type="text" id="blog-title" placeholder="Tựa đề hay gây chú ý cho người đọc" [(ngModel)]="newPost.title">
   </div>
   <div class="tag-info">
-    <input type="text" id="blog tag" placeholder="Tag hay giúp bài viết dễ được tìm hơn" [(ngModel)]="newPost.description">
+    <input type="text" id="blog-tag" placeholder="Tag hay giúp bài viết dễ được tìm hơn" [(ngModel)]="newPost.description">
   </div>
 
   <div class="tag-info">
-    <button (click)="setComposeType('both')">BOTH</button>
-    <button (click)="setComposeType('composer')">COMPOSER</button>
-    <button (click)="setComposeType('preview')">PREVIEW</button>
+    <button (click)="setComposeType('both')" class="btn btn-primary mb-2">Cả 2</button>
+    <button (click)="setComposeType('composer')" class="btn btn-info mb-2">Soạn thảo</button>
+    <button (click)="setComposeType('preview')" class="btn btn-primary mb-2">Xem trước</button>
 
 
-    <button (click)="submitNewPost()" style="float: right">PUBLISH</button>
+    <button type="button" class="btn btn-primary float-right mb-2" data-toggle="modal" data-target="#exampleModal">Đăng liền</button>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Bài viết rất hay, cơ mà bạn cũng nên để lại danh tính chứ nhỉ? (Không có cũng k sao :D)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="blog-author" placeholder="Tên bạn là gì nhỉ?" [(ngModel)]="newPost.author">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="submitNewPost()">Quất nào</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="composer-data">
     <div class="composer-editor" [class.display-full]="composeType==='composer'" [class.display-zero]="composeType==='preview'">

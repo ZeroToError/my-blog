@@ -19,8 +19,8 @@ export class ContactComponent implements OnInit {
   public initData(): void {
     const headingData = new HeadingInfo();
     headingData.cover = 'assets/img/contact-bg.jpg';
-    headingData.heading = 'Contact Us';
-    headingData.subheading = 'Always listening, Always understanding';
+    headingData.heading = 'Muốn tâm sự hả';
+    headingData.subheading = 'Để lại tin nhắn ở dưới nhé, tôi sẽ trả lời :D';
     this.sharingService.setNewHeadingInfo(headingData);
   }
 

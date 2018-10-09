@@ -1,63 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-md-12 mx-auto">
-        <div class="post-preview" *ngFor="let post of postList">
-          <a routerLink="/post/{{post.titleUrl}}">
-            <h2 class="post-title">
-              {{post.title}}
-            </h2>
-            <h3 class="post-subtitle">
-              {{post.description}}
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Admin</a>
-            on {{post.createdAt | date:'longDate'}}</p>
-          <hr>
-        </div>
-
-      <!--<div class="post-preview">-->
-        <!--<a href="post.html">-->
-          <!--<h2 class="post-title">-->
-            <!--I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.-->
-          <!--</h2>-->
-        <!--</a>-->
-        <!--<p class="post-meta">Posted by-->
-          <!--<a href="#">Start Bootstrap</a>-->
-          <!--on September 18, 2018</p>-->
-      <!--</div>-->
-      <!--<hr>-->
-      <!--<div class="post-preview">-->
-        <!--<a href="post.html">-->
-          <!--<h2 class="post-title">-->
-            <!--Science has not yet mastered prophecy-->
-          <!--</h2>-->
-          <!--<h3 class="post-subtitle">-->
-            <!--We predict too much for the next year and yet far too little for the next ten.-->
-          <!--</h3>-->
-        <!--</a>-->
-        <!--<p class="post-meta">Posted by-->
-          <!--<a href="#">Start Bootstrap</a>-->
-          <!--on August 24, 2018</p>-->
-      <!--</div>-->
-      <!--<hr>-->
-      <!--<div class="post-preview">-->
-        <!--<a href="post.html">-->
-          <!--<h2 class="post-title">-->
-            <!--Failure is not an option-->
-          <!--</h2>-->
-          <!--<h3 class="post-subtitle">-->
-            <!--Many say exploration is part of our destiny, but it’s actually our duty to future generations.-->
-          <!--</h3>-->
-        <!--</a>-->
-        <!--<p class="post-meta">Posted by-->
-          <!--<a href="#">Start Bootstrap</a>-->
-          <!--on July 8, 2018</p>-->
-      <!--</div>-->
-      <!--<hr>-->
-      <!-- Pager -->
+      <div class="post-preview" *ngFor="let post of postList">
+        <a routerLink="/post/{{post.titleUrl}}">
+          <h2 class="post-title">
+            {{post.title}}
+          </h2>
+          <h3 class="post-subtitle">
+            {{post.description}}
+          </h3>
+        </a>
+        <p class="post-meta">Viết bởi
+          <a href="javascript:void(0)">{{post.author ? post.author : 'Mít tơ NoBody'}}</a>
+          on {{post.createdAt | date:'longDate'}}</p>
+        <hr>
+      </div>
       <div class="clearfix">
-        <button class="btn btn-primary float-right" (click)="getNextPosts()">Older Posts &rarr;</button>
+        <button type="button" class="btn btn-primary float-left" (click)="getPreviousPosts()" *ngIf="currentPage > 0">&larr; Bài trước</button>
+        <button type="button" class="btn btn-primary float-right" (click)="getNextPosts()" *ngIf="currentPage < totalPages - 1">Xem tiếp &rarr;</button>
       </div>
     </div>
   </div>
