@@ -39,7 +39,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
           tables: true,
           breaks: false,
           pedantic: false,
-          sanitize: false,
+          sanitize: true,
           smartLists: true,
           smartypants: false,
         },

@@ -34,7 +34,7 @@ export class PostService {
   }
 
   getPostsPaging(page: number): Observable<any> {
-    const url = POST_PATH + '?page=' +  page + '&size=' + this.postPerPageInHome + '&sort=createdAt';
+    const url = POST_PATH + '/excludeContent' + '?page=' +  page + '&size=' + this.postPerPageInHome + '&sort=createdAt';
     return this.httpService.get(url);
   }
 
