@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-12 mx-auto">
+      <div class="post-preview" *ngFor="let post of postList">
+        <a routerLink="/post/{{post.titleUrl}}">
+          <h2 class="post-title">
+            {{post.title}}
+          </h2>
+          <h3 class="post-subtitle">
+            {{post.description}}
+          </h3>
+        </a>
+        <p class="post-meta">Viết bởi
+          <a href="javascript:void(0)">{{post.author ? post.author : 'Mít tơ NoBody'}}</a>
+          on {{post.createdAt | date:'longDate'}}</p>
+        <hr>
+      </div>
+      <div class="clearfix">
+        <button type="button" class="btn btn-primary float-left" (click)="getPreviousPosts()" *ngIf="currentPage > 0">&larr; Bài trước</button>
+        <button type="button" class="btn btn-primary float-right" (click)="getNextPosts()" *ngIf="currentPage < totalPages - 1">Xem tiếp &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>

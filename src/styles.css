@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+*:focus {
+  border: none;
+}
+
+.markdown p {
+  text-align: justify !important;
+  text-indent: 25px;
+}
+
+.markdown a {
+  color: #17a2b8;
+  text-decoration: none !important;
+}
+
+.markdown h1 {
+  color: #17a2b8;
+  text-decoration: none;
+}
+
+
+.markdown img {
+  max-width: 100%;
+}

@@ -1,0 +1,18 @@
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-12 mx-auto">
+        <div class="post-preview">
+          <p class="post-meta">Viết bởi
+            <a href="javascript:void(0)">{{post.author ? post.author : 'Mít tơ NoBody'}}</a>
+            on {{post.createdAt | date:'longDate'}}</p>
+          <hr>
+        </div>
+        <div markdown [data]="post.content" class="markdown" ngPreserveWhitespaces>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+<!--<hr>-->
+
